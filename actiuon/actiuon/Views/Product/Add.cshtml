@@ -1,0 +1,48 @@
+﻿@model Product
+<div class="add-prod-modal d-flex d-none">
+    <div class="modal-p col-6">
+        <form asp-action="Add" method="post">
+            <div class="row d-flex">
+                <div class="col-5">
+                    <div class="modal-pic">
+                        <img src="~/img/@Model.ProdImg"
+                             class="w-100" />
+                        <input id="update" class="mb-5 d-none" asp-for="ProdImg" />
+                        <label asp-for="ProdImg">Choose File</label>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="modal-info d-flex mt-4">
+                        <div class="modal-inner col-9 ms-5">
+
+                            <input type="text" placeholder="Product name" asp-for="Name"/>
+                        </div>
+                        <div class="modal-inner col-9 ms-5">
+                            <input type="text" placeholder="Min. price" asp-for="Prise"/>
+                        </div>
+                        <div class="modal-inner col-6 ms-5">
+                            <select name="category" id="modal-cate" class="w-100">
+                                <option value="1">Bag</option>
+                                <option value="2">Watch</option>
+                                <option value="3">Jewellery</option>
+                                <option value="4">Electronic</option>
+                                <option value="5">Perfume</option>
+                                <option value="6">Sneakers</option>
+                            </select>
+                        </div>
+                        <div class="modal-inner col-6 ms-5">
+                            <label for="session-time">Session Date</label>
+                            <input type="date" id="session-time" />
+                        </div>
+                        <div class="submit-prod col-9 d-flex ms-5">
+                            <button type="submit" class="sub-but">
+                                Submit Product
+                            </button>
+                            <a href="#" class="canc-but close-add-prod-modal">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
